@@ -3,7 +3,8 @@ const app = express();
 const userRouter = require('./routes/userRoutes.js');
 // const open = require('open');
 
-// App Routing Middlewares
+// App Routing / Middlewares
+app.use(express.json());
 app.use('/api/v1/users', userRouter);
 
 app.listen(3000, () => {

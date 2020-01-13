@@ -9,11 +9,19 @@ exports.get = (req, resp, next) => {
 };
 
 exports.post = (req, resp, next) => {
-    console.log(resp.statusCode);
-    resp.status(201).json({
-        message: 'Created'
-    });
+    if (req.body.name && req.body.lastname) {
+        console.log(req.body);
+        resp.status(201).json({
+        message: 'Created succesfully!'
+        });
     next();
+    } else {
+        console.log(req.body);
+        resp.status(400).json({
+        message: 'bad request' 
+        });
+        next();
+    };
 };
 
 exports.getId = (req, resp, next) => {
