@@ -1,20 +1,13 @@
 const express = require('express');
 const app = express();
-const open = require('open');
-// Middlewares
-app.use('/home', (req, resp, next) => {
-  console.log(`Request URL:  ${req.originalUrl}`);
-  console.log(`Request TYPE:  ${req.method}`);
-  resp.send('Hello from home!');
-  next();
-});
-// Routes
-// app.get('/', (req, res) => {
-//   res.status(200);
-//   res.send('This is my server');
-// });
+const userRouter = require('./routes/userRoutes.js');
+// const open = require('open');
+
+// App Routing Middlewares
+app.use('/api/v1/users', userRouter);
 
 app.listen(3000, () => {
   console.log('Listening on port 3000');
-  open('http://localhost:3000/home');
+  // console.log(data);
+  // open('http://localhost:3000/home');
 });
