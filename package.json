@@ -4,12 +4,13 @@
   "description": "Express testing server",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "npx nodemon app.js"
   },
   "author": "Vytautas Klimavicius",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "open": "^7.0.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.2"

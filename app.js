@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express();
+const open = require('open');
 // Middlewares
 app.use('/home', (req, resp, next) => {
   console.log(`Request URL:  ${req.originalUrl}`);
@@ -15,4 +16,5 @@ app.use('/home', (req, resp, next) => {
 
 app.listen(3000, () => {
   console.log('Listening on port 3000');
+  open('http://localhost:3000/home');
 });
